@@ -5,7 +5,7 @@
 	<script type="text/javascript"></script>
 </head>
 <body>
-Output screen:<textarea id="screen"></textarea> <br>
+Output screen:<textarea id="screen" readonly></textarea> <br>
 <input type="button" name="one" value="1" onclick="onclickhit(this.value)"><input type="button" name="two" value="2" onclick="onclickhit(this.value)"><input type="button" name="three" value="3" onclick="onclickhit(this.value)"><br>
 <input type="button" name="four" value="4" onclick="onclickhit(this.value)"><input type="button" name="five" value="5" onclick="onclickhit(this.value)"><input type="button" name="six" value="6" onclick="onclickhit(this.value)"><br>
 <input type="button" name="seven" value="7" onclick="onclickhit(this.value)"><input type="button" name="eight" value="8" onclick="onclickhit(this.value)"><input type="button" name="nine" value="9" onclick="onclickhit(this.value)"><br>
@@ -16,7 +16,7 @@ Output screen:<textarea id="screen"></textarea> <br>
 <input type="button" name="divide" value="/" onclick="onclickhit(this.value)">
 <script type="text/javascript">
 	var sol1;
-		var sol;
+		var sol,i;
 	function onclickhit(value)
 	{
       document.getElementById("screen").innerHTML=document.getElementById("screen").value+value;
@@ -29,41 +29,39 @@ Output screen:<textarea id="screen"></textarea> <br>
 
 		console.log(sol);
 		var temp=0;
-		console.log(sol[0]);
-		console.log(sol[1]);
-		console.log(sol[2]);
-		var i=0;
+		i=0;
 		var ans=0;
 		var operator;
 		var temp2=0;
 		while(sol[i]!=null)
-		{
+		{   
+			console.log("first while :" + i);
 			if(sol[i]=='+')
            	{
            		operator=i;
            		temp2=part2(i);
-           		ans=temp+temp2;
+           		ans=ans+temp2;
            	}
            	//ans=temp+parseFloat(sol[i+1]);
            else if(sol[i]=='-')
            {
            	operator=i;
            temp2=part2(i);
-           ans=temp-temp2;
+           ans=ans-temp2;
            }
            	//ans=temp-parseFloat(sol[i+1]);
            else if(sol[i]=='*') 
      		{
      			operator=i;
      			temp2=part2(i);
-     			ans=temp*temp2;
+     			ans=ans*temp2;
      		}
      		//ans=temp*parseFloat(sol[i+1]);
            else if(sol[i]=='/') 
          	{
          		operator=i;
          		temp2=part2(i);
-         		ans=temp/temp2;
+         		ans=ans/temp2;
          		//ans=temp/parseFloat(sol[i+1]);
          	}
          	else
@@ -71,6 +69,7 @@ Output screen:<textarea id="screen"></textarea> <br>
          		if(i>operator)
          			break;
          		temp=temp*10+parseFloat(sol[i]);
+         		ans=temp;
          		console.log(i+" : "+temp);
          	}
     	i++;   
@@ -80,17 +79,30 @@ Output screen:<textarea id="screen"></textarea> <br>
 		document.getElementById("screen").innerHTML=ans;
 	}
 
-	function part2(i)
+	function part2(k)
 	{
+		console.log(k);
 		var start;
-		start=i;
+		start=k;
 		var number=0;
-		i++;
-		while(sol[i]!=null)
-		{
-			number=number*10+parseFloat(sol[i]);	
-		i++;
+		k++;
+		while(sol[k]!=null)
+		{   
+			if(sol[k]=='+'){
+				break;
+			}else if(sol[k]=='-'){
+				break;
+			}
+			else if(sol[k]=='/'){
+				break;
+			}
+			else if(sol[k]=='*'){
+				break;
+			}
+			number=number*10+parseFloat(sol[k]);	
+		k++;
 		}
+		i=k-1;
 		return number;
 	}
 	function clearit()
