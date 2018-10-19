@@ -3,7 +3,7 @@
 <head>
 	<title></title>
 	<script type="text/javascript"></script>
-	<meta charset="utf-8"  content="width=device-width, initial-scale="1.0" name="viewport">
+	<meta charset="utf-8"  content="width=device-width, initial-scale=1.0" name="viewport">
 	<style type="text/css">
 		input
 		{
@@ -13,6 +13,7 @@
 		body
 		{
 			background-image: url('conf2.jpg') ;
+			background-repeat: no-repeat;
 		}
 		h1
 		{
@@ -20,38 +21,32 @@
 			text-align: center;
 			padding-top: 180px;
 		}
-		#div1
-		{
-			height: 200px;
-			width: 200px;
-			color: orange;
-		}
-	</style>
-	
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <script src="jquery-3.3.1.js"></script>
 
-  
+	</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
-
-</head>
+	</head>
 <body>
-	<h1>The Faltoo Calculator!</h1>
-
-	<div style="background-color: orange;" class="container">
-		<div class="row">
-<div class="col-ld-3"></div>
-	<div class="col-ld-6" style="padding-left: 43%;">
-		<font color="white" align="center">Display:</font><br>
-<textarea id="screen"  style="width: 200px;"></textarea> <br>
-<input type="button" name="one" value="1" onclick="onclickhit(this.value)"><input type="button" name="two" value="2" onclick="onclickhit(this.value)"><input type="button" name="three" value="3" onclick="onclickhit(this.value)" ><input type="button" name="equals" id="equalto" value="=" onclick="evaluatevalue()"><br>
-<input type="button" name="four" value="4" onclick="onclickhit(this.value)"><input type="button" name="five" value="5" onclick="onclickhit(this.value)"><input type="button" name="six" value="6" onclick="onclickhit(this.value)"><input type="button" name="clr" id="clr" value="CLR" onclick="clearit()"><br>
-<input type="button" name="seven" value="7" onclick="onclickhit(this.value)"><input type="button" name="eight" value="8" onclick="onclickhit(this.value)"><input type="button" name="nine" value="9" onclick="onclickhit(this.value)"><input type="button" name="multiply" value="*" onclick="onclickhit(this.value)"><br>
-<input type="button" name="add" value="+" onclick="onclickhit(this.value)"><input type="button" name="zero" value="0" onclick="onclickhit(this.value)"><input type="button" name="sub" value="-" onclick="onclickhit(this.value)"><input type="button" name="divide" value="/" onclick="onclickhit(this.value)"><br>
-</div>
-<div class="col-ld-3"></div>
-</div>
+	<h1 style="color: white;">The Faltoo Calculator!</h1>
+<div class="container">
+	<div class="row">
+		<div class="col-md-4 col-xs-4"><div class="customDiv" style="color: white;">column1</div>
+		</div>
+			<div class="col-md-4 col-xs-4" style="align-content: center;">
+				<div class="customDiv"><font color="white" align="center">Display:</font><br>
+				<textarea id="screen"  style="width: 200px;"></textarea> <br>
+				<input type="button" name="one" value="1" onclick="onclickhit(this.value)"><input type="button" name="two" value="2" onclick="onclickhit(this.value)"><input type="button" name="three" value="3" onclick="onclickhit(this.value)" ><input type="button" name="equals" id="equalto" value="=" onclick="evaluatevalue()"><br>
+				<input type="button" name="four" value="4" onclick="onclickhit(this.value)"><input type="button" name="five" value="5" onclick="onclickhit(this.value)"><input type="button" name="six" value="6" onclick="onclickhit(this.value)"><input type="button" name="clr" id="clr" value="CLR" onclick="clearit()"><br>
+				<input type="button" name="seven" value="7" onclick="onclickhit(this.value)"><input type="button" name="eight" value="8" onclick="onclickhit(this.value)"><input type="button" name="nine" value="9" onclick="onclickhit(this.value)"><input type="button" name="multiply" value="*" onclick="onclickhit(this.value)"><br>
+				<input type="button" name="add" value="+" onclick="onclickhit(this.value)"><input type="button" name="zero" value="0" onclick="onclickhit(this.value)"><input type="button" name="sub" value="-" onclick="onclickhit(this.value)"><input type="button" name="divide" value="/" onclick="onclickhit(this.value)"><br>
+			`	</div>
+			</div>
+		<div class="col-md-4 col-xs-4">
+		<div class="customDiv" style="color: white;">column3</div>
+		</div>
+	</div>
 </div>
 
 <script type="text/javascript">
