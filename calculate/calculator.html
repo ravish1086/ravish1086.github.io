@@ -21,6 +21,10 @@
 			text-align: center;
 			padding-top: 180px;
 		}
+		input[value=Backspace]
+		{
+			width:200px;
+		}
 
 	</style>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
@@ -39,6 +43,7 @@
 				<div align="center">
 					<font color="white" align="center">Display:</font><br>
 				<textarea id="screen"  style="width: 200px;"></textarea> <br>
+				<input type="button" name="backspace" value="Backspace" onclick="erase()"><br>
 				<input type="button" name="one" value="1" onclick="onclickhit(this.value)"><input type="button" name="two" value="2" onclick="onclickhit(this.value)"><input type="button" name="three" value="3" onclick="onclickhit(this.value)" ><input type="button" name="equals" id="equalto" value="=" onclick="evaluatevalue()"><br>
 				<input type="button" name="four" value="4" onclick="onclickhit(this.value)"><input type="button" name="five" value="5" onclick="onclickhit(this.value)"><input type="button" name="six" value="6" onclick="onclickhit(this.value)"><input type="button" name="clr" id="clr" value="CLR" onclick="clearit()"><br>
 				<input type="button" name="seven" value="7" onclick="onclickhit(this.value)"><input type="button" name="eight" value="8" onclick="onclickhit(this.value)"><input type="button" name="nine" value="9" onclick="onclickhit(this.value)"><input type="button" name="multiply" value="*" onclick="onclickhit(this.value)"><br>
@@ -54,7 +59,21 @@
 
 <script type="text/javascript">
 	var sol1;
-		var sol,i;
+		var sol,i,a;
+
+		function erase()
+		{
+		var sol2=document.getElementById("screen").value;
+		var sol3=sol2.split("");
+		a=0;
+		while(sol3[a]!=null)
+		{
+			a++;
+		}
+		sol3[a-1]=null;
+		var finalsol=sol3.join("");	
+		document.getElementById("screen").innerHTML=finalsol;
+		}
 	function onclickhit(value)
 	{
       document.getElementById("screen").innerHTML=document.getElementById("screen").value+value;
