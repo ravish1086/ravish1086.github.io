@@ -12,7 +12,7 @@
 		}
 		body
 		{
-			background-image: url('conf2.jpg') ;
+			background-image: url('conf1.jpg') ;
 			background-repeat: no-repeat;
 		}
 		h1
@@ -24,6 +24,12 @@
 		input[value=Backspace]
 		{
 			width:200px;
+		}
+		input[type=button]
+		{
+			border-style: solid;
+			border-color: black;
+			border-radius: 10px;
 		}
 
 	</style>
@@ -39,10 +45,10 @@
 		<div class="col-lg-4 col-sm-3"><div class="customDiv" style=" "></div>
 		</div>
 			<div class="col-lg-4 col-sm-6" style=" ">
-				<div class="customDiv" style=" background-color: orange; margin: 5px;">
-				<div align="center">
+				<div class="customDiv" style=" background-image: url('conf4.jpg');  margin: 5px;">
+				<div align="center" style="border-color: black; border-style: solid; ">
 					<font color="white" align="center">Display:</font><br>
-				<textarea id="screen"  style="width: 200px;"></textarea> <br>
+				<textarea id="screen"  style="width: 200px; border-style: solid; border-color: black; border-radius: 10px;"></textarea> <br>
 				<input type="button" name="backspace" value="Backspace" onclick="erase()"><br>
 				<input type="button" name="one" value="1" onclick="onclickhit(this.value)"><input type="button" name="two" value="2" onclick="onclickhit(this.value)"><input type="button" name="three" value="3" onclick="onclickhit(this.value)" ><input type="button" name="equals" id="equalto" value="=" onclick="evaluatevalue()"><br>
 				<input type="button" name="four" value="4" onclick="onclickhit(this.value)"><input type="button" name="five" value="5" onclick="onclickhit(this.value)"><input type="button" name="six" value="6" onclick="onclickhit(this.value)"><input type="button" name="clr" id="clr" value="CLR" onclick="clearit()"><br>
