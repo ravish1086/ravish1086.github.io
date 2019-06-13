@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TIC TAC TOE</title>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+	.box
+	{
+		border: 2px solid black;
+		height: 75px;
+		width: 75px;
+		text-align: center;
+		transition: all .25s ease-in-out;
+		font-size: 50px;
+		color: white;
+	}
+	.out
+	{
+		align-self: center;
+		
+	}
+	.box:hover
+	{
+		background-color: red;
+		color:yellow;
+		cursor: pointer;
+	}
+	
+</style>
+<body>
+
+<div class="container-fluid">
+
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lavender;">THE TIC TAC TOE 
+    </div>
+    <div class="col-sm-4" style="">
+   <div class="out">
+   	<h2>Next Turn</h2><h2 id="next" style="margin-left: 40px;">X</h2>
+<table>
+<tr>
+<td><div class="box"  id="box1" style="display:inline-block;" onclick="ticval(1)" >1</div></td>
+<td><div class="box"  id="box2" style="display:inline-block;" onclick="ticval(2)">2</div></td>
+<td><div class="box"   id="box3" style="display:inline-block;" onclick="ticval(3)">3</div></td>
+</tr>
+<tr>
+<td><div  class="box"  id="box4" style="display:inline-block;" onclick="ticval(4)">4</div></td>
+<td><div class="box"  id="box5" style="display:inline-block;" onclick="ticval(5)">5</div></td>
+<td><div class="box"  id="box6" style="display:inline-block;" onclick="ticval(6)">6</div></td>
+</tr>
+<tr>
+<td><div class="box"  id="box7" style="display:inline-block;" onclick="ticval(7)">7</div></td>
+<td><div class="box"  id="box8" style="display:inline-block;" onclick="ticval(8)">8</div></td>
+<td><div class="box"  id="box9" style="display:inline-block;" onclick="ticval(9)">9</div></td>
+</tr>
+</table>
+<h1 id="win">Waiting</h1><h2 id="winner">For Winner</h2>
+<button onclick="reloadpage()">Replay</button>
+</div>
+
+   
+</div>
+   <div class="col-sm-4" style="background-color:lavender;">BETA
+    </div>
+  </div>
+
+
+
+</div>
+
+
+
+
+<script type="text/javascript">
+	var box,boxy,int;
+	function reloadpage() {
+		// body...
+		document.location.reload(true);
+	}
+	function wincolor(box,boxy,boxyy)
+	{
+		document.getElementById(box).style.color="yellow";
+		document.getElementById(boxy).style.color="yellow";
+		document.getElementById(boxyy).style.color="yellow";
+		document.getElementById(box).style.backgroundColor="red";
+		document.getElementById(boxy).style.backgroundColor="red";
+		document.getElementById(boxyy).style.backgroundColor="red";
+			
+	}
+	function clkdisabler()
+	{
+		for(i=1;i<=9;i++)
+		{	
+			boxy="box"+i;
+			document.getElementById(boxy).onclick=null;
+		}
+	}
+	
+	function checkers()
+	{
+		console.log("hello");
+		if(document.getElementById('box1').innerHTML!=="" && document.getElementById('box1').innerHTML===document.getElementById('box2').innerHTML && document.getElementById('box2').innerHTML===document.getElementById('box3').innerHTML){
+			document.getElementById('win').innerHTML="Winner IS ";
+			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+			
+			document.getElementById('box1').style.color="yellow";
+		document.getElementById('box2').style.color="yellow";
+		document.getElementById('box3').style.color="yellow";
+		document.getElementById('box1').style.backgroundColor="red";
+		document.getElementById('box2').style.backgroundColor="red";
+		document.getElementById('box3').style.backgroundColor="red";
+		clkdisabler();
+				
+		}
+		if(document.getElementById('box4').innerHTML!=="" && document.getElementById('box4').innerHTML===document.getElementById('box5').innerHTML && document.getElementById('box5').innerHTML===document.getElementById('box6').innerHTML){
+			document.getElementById('win').innerHTML="Winner IS";
+			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+			document.getElementById('box4').style.color="yellow";
+		document.getElementById('box5').style.color="yellow";
+		document.getElementById('box6').style.color="yellow";
+		document.getElementById('box4').style.backgroundColor="red";
+		document.getElementById('box5').style.backgroundColor="red";
+		document.getElementById('box6').style.backgroundColor="red";
+				clkdisabler();
+		}		
+		if(document.getElementById('box7').innerHTML!=="" && document.getElementById('box7').innerHTML===document.getElementById('box8').innerHTML && document.getElementById('box8').innerHTML===document.getElementById('box9').innerHTML){
+			document.getElementById('win').innerHTML="Winner IS : ";
+			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+			document.getElementById('box7').style.color="yellow";
+		document.getElementById('box8').style.color="yellow";
+		document.getElementById('box9').style.color="yellow";
+		document.getElementById('box7').style.backgroundColor="red";
+		document.getElementById('box8').style.backgroundColor="red";
+		document.getElementById('box9').style.backgroundColor="red";
+		clkdisabler();
+		}		
+		if(document.getElementById('box1').innerHTML!=="" && document.getElementById('box1').innerHTML===document.getElementById('box5').innerHTML && document.getElementById('box5').innerHTML===document.getElementById('box9').innerHTML){
+			document.getElementById('win').innerHTML="Winner IS";
+			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+			document.getElementById('box1').style.color="yellow";
+		document.getElementById('box5').style.color="yellow";
+		document.getElementById('box9').style.color="yellow";
+		document.getElementById('box1').style.backgroundColor="red";
+		document.getElementById('box5').style.backgroundColor="red";
+		document.getElementById('box9').style.backgroundColor="red";
+		clkdisabler();
+		}		
+		if(document.getElementById('box1').innerHTML!=="" && document.getElementById('box1').innerHTML===document.getElementById('box4').innerHTML && document.getElementById('box4').innerHTML===document.getElementById('box7').innerHTML){
+			document.getElementById('win').innerHTML="Winner IS";
+			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+		document.getElementById('box1').style.color="yellow";
+		document.getElementById('box4').style.color="yellow";
+		document.getElementById('box7').style.color="yellow";
+		document.getElementById('box1').style.backgroundColor="red";
+		document.getElementById('box4').style.backgroundColor="red";
+		document.getElementById('box7').style.backgroundColor="red";
+		clkdisabler();
+		}		
+		if(document.getElementById('box2').innerHTML!=="" && document.getElementById('box2').innerHTML===document.getElementById('box5').innerHTML && document.getElementById('box5').innerHTML===document.getElementById('box8').innerHTML){
+			document.getElementById('win').innerHTML="Winner IS";
+			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+				document.getElementById('box2').style.color="yellow";
+		document.getElementById('box5').style.color="yellow";
+		document.getElementById('box8').style.color="yellow";
+		document.getElementById('box2').style.backgroundColor="red";
+		document.getElementById('box5').style.backgroundColor="red";
+		document.getElementById('box8').style.backgroundColor="red";
+		clkdisabler();
+		}		
+		if(document.getElementById('box3').innerHTML!=="" && document.getElementById('box3').innerHTML===document.getElementById('box5').innerHTML && document.getElementById('box5').innerHTML===document.getElementById('box7').innerHTML){
+			document.getElementById('win').innerHTML=="Winner IS";
+			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+				document.getElementById('box3').style.color="yellow";
+		document.getElementById('box5').style.color="yellow";
+		document.getElementById('box7').style.color="yellow";
+		document.getElementById('box3').style.backgroundColor="red";
+		document.getElementById('box5').style.backgroundColor="red";
+		document.getElementById('box7').style.backgroundColor="red";
+		clkdisabler();
+		}	
+		if(document.getElementById('box3').innerHTML!=="" && document.getElementById('box3').innerHTML===document.getElementById('box6').innerHTML && document.getElementById('box6').innerHTML===document.getElementById('box9').innerHTML){
+			document.getElementById('win').innerHTML="Winner IS";
+			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+			document.getElementById('box3').style.color="yellow";
+		document.getElementById('box6').style.color="yellow";
+		document.getElementById('box9').style.color="yellow";
+		document.getElementById('box3').style.backgroundColor="red";
+		document.getElementById('box6').style.backgroundColor="red";
+		document.getElementById('box9').style.backgroundColor="red";	
+		clkdisabler
+		}
+	}
+	function ticval(value)
+	{	
+		
+		box="box"+value;
+		console.log(box);
+			document.getElementById(box).innerHTML=document.getElementById('next').innerHTML;
+			document.getElementById(box).onclick=null;
+			document.getElementById(box).style.color="black";
+			
+			
+			checkers();
+
+		if(document.getElementById('next').innerHTML==="X"){
+		document.getElementById('next').innerHTML="O";
+		}
+		else
+		{
+			document.getElementById('next').innerHTML="X";
+			
+		}
+	}
+
+</script>
+</body>
+</html>
