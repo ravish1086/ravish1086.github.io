@@ -41,7 +41,7 @@
     </div>
     <div class="col-sm-4" style="">
    <div class="out">
-   	<h2>Next Turn</h2><h2 id="next" style="margin-left: 40px;">X</h2>
+   	<h2 id="fix">Next Turn</h2><h2 id="next" style="margin-left: 40px;">X</h2>
 <table>
 <tr>
 <td><div class="box"  id="box1" style="display:inline-block;" onclick="ticval(1)" >1</div></td>
@@ -107,7 +107,8 @@
 		if(document.getElementById('box1').innerHTML!=="" && document.getElementById('box1').innerHTML===document.getElementById('box2').innerHTML && document.getElementById('box2').innerHTML===document.getElementById('box3').innerHTML){
 			document.getElementById('win').innerHTML="Winner IS ";
 			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
-			
+			document.getElementById('fix').innerHTML="Game";
+			document.getElementById('next').innerHTML="Over";
 			document.getElementById('box1').style.color="yellow";
 		document.getElementById('box2').style.color="yellow";
 		document.getElementById('box3').style.color="yellow";
@@ -120,6 +121,8 @@
 		if(document.getElementById('box4').innerHTML!=="" && document.getElementById('box4').innerHTML===document.getElementById('box5').innerHTML && document.getElementById('box5').innerHTML===document.getElementById('box6').innerHTML){
 			document.getElementById('win').innerHTML="Winner IS";
 			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+						document.getElementById('fix').innerHTML="Game";
+			document.getElementById('next').innerHTML="Over";
 			document.getElementById('box4').style.color="yellow";
 		document.getElementById('box5').style.color="yellow";
 		document.getElementById('box6').style.color="yellow";
@@ -131,6 +134,8 @@
 		if(document.getElementById('box7').innerHTML!=="" && document.getElementById('box7').innerHTML===document.getElementById('box8').innerHTML && document.getElementById('box8').innerHTML===document.getElementById('box9').innerHTML){
 			document.getElementById('win').innerHTML="Winner IS : ";
 			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+						document.getElementById('fix').innerHTML="Game";
+			document.getElementById('next').innerHTML="Over";
 			document.getElementById('box7').style.color="yellow";
 		document.getElementById('box8').style.color="yellow";
 		document.getElementById('box9').style.color="yellow";
@@ -142,6 +147,8 @@
 		if(document.getElementById('box1').innerHTML!=="" && document.getElementById('box1').innerHTML===document.getElementById('box5').innerHTML && document.getElementById('box5').innerHTML===document.getElementById('box9').innerHTML){
 			document.getElementById('win').innerHTML="Winner IS";
 			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+						document.getElementById('fix').innerHTML="Game";
+			document.getElementById('next').innerHTML="Over";
 			document.getElementById('box1').style.color="yellow";
 		document.getElementById('box5').style.color="yellow";
 		document.getElementById('box9').style.color="yellow";
@@ -153,6 +160,8 @@
 		if(document.getElementById('box1').innerHTML!=="" && document.getElementById('box1').innerHTML===document.getElementById('box4').innerHTML && document.getElementById('box4').innerHTML===document.getElementById('box7').innerHTML){
 			document.getElementById('win').innerHTML="Winner IS";
 			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+						document.getElementById('fix').innerHTML="Game";
+			document.getElementById('next').innerHTML="Over";
 		document.getElementById('box1').style.color="yellow";
 		document.getElementById('box4').style.color="yellow";
 		document.getElementById('box7').style.color="yellow";
@@ -164,6 +173,8 @@
 		if(document.getElementById('box2').innerHTML!=="" && document.getElementById('box2').innerHTML===document.getElementById('box5').innerHTML && document.getElementById('box5').innerHTML===document.getElementById('box8').innerHTML){
 			document.getElementById('win').innerHTML="Winner IS";
 			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+						document.getElementById('fix').innerHTML="Game";
+			document.getElementById('next').innerHTML="Over";
 				document.getElementById('box2').style.color="yellow";
 		document.getElementById('box5').style.color="yellow";
 		document.getElementById('box8').style.color="yellow";
@@ -173,8 +184,10 @@
 		clkdisabler();
 		}		
 		if(document.getElementById('box3').innerHTML!=="" && document.getElementById('box3').innerHTML===document.getElementById('box5').innerHTML && document.getElementById('box5').innerHTML===document.getElementById('box7').innerHTML){
-			document.getElementById('win').innerHTML=="Winner IS";
+			document.getElementById('win').innerHTML="Winner IS";
 			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+						document.getElementById('fix').innerHTML="Game";
+			document.getElementById('next').innerHTML="Over";
 				document.getElementById('box3').style.color="yellow";
 		document.getElementById('box5').style.color="yellow";
 		document.getElementById('box7').style.color="yellow";
@@ -186,13 +199,15 @@
 		if(document.getElementById('box3').innerHTML!=="" && document.getElementById('box3').innerHTML===document.getElementById('box6').innerHTML && document.getElementById('box6').innerHTML===document.getElementById('box9').innerHTML){
 			document.getElementById('win').innerHTML="Winner IS";
 			document.getElementById('winner').innerHTML=document.getElementById('next').innerHTML;
+						document.getElementById('fix').innerHTML="Game";
+			document.getElementById('next').innerHTML="Over";
 			document.getElementById('box3').style.color="yellow";
 		document.getElementById('box6').style.color="yellow";
 		document.getElementById('box9').style.color="yellow";
 		document.getElementById('box3').style.backgroundColor="red";
 		document.getElementById('box6').style.backgroundColor="red";
 		document.getElementById('box9').style.backgroundColor="red";	
-		clkdisabler
+		clkdisabler();
 		}
 	}
 	function ticval(value)
@@ -201,6 +216,7 @@
 		box="box"+value;
 		console.log(box);
 			document.getElementById(box).innerHTML=document.getElementById('next').innerHTML;
+			
 			document.getElementById(box).onclick=null;
 			document.getElementById(box).style.color="black";
 			
@@ -210,7 +226,11 @@
 		if(document.getElementById('next').innerHTML==="X"){
 		document.getElementById('next').innerHTML="O";
 		}
-		else
+		else if(document.getElementById('next').innerHTML==="Over")
+		{
+			
+		}
+		else 
 		{
 			document.getElementById('next').innerHTML="X";
 			
