@@ -9,20 +9,26 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     </head>
-    
+    <body onload="GetDetails();" style="background-image: url('back.jpg');">
+    <div>
+
+        <div style="align-items: center;">
         <h2>Tasker - Just For YOU  (Under Development) </h2>
-        <body onload="GetDetails();">
-            <h3 id="User"></h3>
-        <div>
+        </div>
+        
+        <div> 
+               <h3 id="User"></h3>
+        </div>
             <div>
-                Aaj Ki Tareekh: <br><font id="tareekh"></font>
+            <div >
+                <Text style="text-decoration: solid;">Aaj Ki Tareekh: </Text><br><Text id="tareekh"></Text>
             </div>
             <br>
-        <div><font>Enter the Task Name:</font> 
+        <div><text>Enter the Task Name:</Text> 
          <input type="text" name="taskname" id="taskname" class="form-control"> 
-         <font>Enter Task Description :</font>
+         <Text>Enter Task Description :</Text>
          <input type="text" name="description" id="description" class="form-control">
-         <font>Target Date :</font>
+         <Text>Target Date :</Text>
          <input type="date" name="date" id="date" class="form-control">
         </div>
         <button onclick="AddTask();">Add Task</button>
@@ -32,6 +38,7 @@
           
         </table>
         </div>
+        </div>
         <button onclick="ClearStorage();">
 clear storage
             </button>
@@ -39,8 +46,15 @@ clear storage
         </div>
         <script>
             function ClearStorage()
-            {
+            {   
+                var confirm=window.prompt("Are You sure\nType Y if you really want to clear storage..!!");
+                if(confirm=='Y'){
                 localStorage.clear();
+                location.reload();
+                }
+                else{
+
+                }
             }
             function AddTask()
             {   
