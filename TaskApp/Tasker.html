@@ -1,0 +1,90 @@
+<html>
+    <head>
+        <Title>Tasker Application</Title>
+        <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="HandheldFriendly" content="true">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    </head>
+        <h2>Tasker - Just For YOU   </h2>
+        <body onload="GetDetails();">
+        <div>
+            <div>
+                Aaj Ki Tareekh: <br><font id="tareekh"></font>
+            </div>
+            <br>
+        <div><font>Enter the Task Name:</font> 
+         <input type="text" name="taskname" id="taskname" class="form-control"> 
+         <br>
+         <font>Enter Task Description :</font>
+         <input type="text" name="description" id="description" class="form-control">
+         <font>Date :</font>
+         <input type="text" name="date" id="date" class="form-control">
+        </div>
+        <button onclick="AddTask();">Add Task</button>
+
+        <table border="1px solid" id="tablee" class="table table-striped">
+            <tr><th>TaskName</th><th>Description</th><th>Date</th></tr>
+          
+        </table>
+        <button onclick="ClearStorage();">
+clear storage
+            </button>
+        </button>
+        </div>
+        <script>
+            function ClearStorage()
+            {
+                localStorage.clear();
+            }
+            function AddTask()
+            {   
+                var length=localStorage.length;
+                console.log('length is = '+length);
+                length=length/2;
+                console.log("In Add Task");
+                var taskname=document.getElementById('taskname').value;
+                var description=document.getElementById('description').value;
+                console.log(taskname);
+                var keytaskname='taskname'+length;
+                var keydescription='description'+length;
+                window.localStorage.setItem(keytaskname, taskname);
+                window.localStorage.setItem(keydescription,description);
+                var lengthh=localStorage.length;
+                console.log('after adding length is = '+lengthh);
+                location.reload();
+                
+            }
+            function GetDetails()
+            {
+                var date=new Date();
+                console.log(date.toDateString());
+                document.getElementById('tareekh').innerHTML=date.toDateString();
+                var length=localStorage.length;
+                console.log(length);
+                
+               for (i = 0; i < localStorage.length; i+=2)
+                {
+                    a=i/2;
+                    console.log('a ='+a);
+                    var row='<tr><td id="taskname'+a+'"></td><td id="description'+a+'"></td><td></td></tr>';
+                console.log(row);
+                document.getElementById('tablee').innerHTML+=row;
+                var taskname=window.localStorage.getItem('taskname'+a);
+                console.log("In Details1"+ taskname);
+                var description=window.localStorage.getItem('description'+a);
+                console.log("In Details2"+ description);
+                document.getElementById('taskname'+a).innerHTML=taskname;
+                document.getElementById('description'+a).innerHTML=description;
+                b=a+1;
+                console.log('value of b is ='+b);
+                }
+            }
+
+
+        </script>
+        </body>
+        </html>
