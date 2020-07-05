@@ -3,7 +3,7 @@
   background-color: #243873;
   text-decoration-color: white;
   color: antiquewhite;
-  
+  z-index: 2;
 }
 body {
     position: relative;
@@ -18,10 +18,9 @@ body {
     background-color: #021759;
     color: white;
     position: fixed;
-    margin-left: 315px;
-    width: 100%;
     height: 40px;
     z-index: 1;
+    width: 100%;
     
   }
   #dropdown
