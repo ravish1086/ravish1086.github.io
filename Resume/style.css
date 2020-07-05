@@ -1,0 +1,70 @@
+#myScrollspy
+{
+  background-color: #243873;
+  text-decoration-color: white;
+  color: antiquewhite;
+  
+}
+body {
+    position: relative;
+  }
+  ul.nav-pills {
+    top: 20px;
+    position: fixed;
+    
+  }
+  .header
+  {
+    background-color: #021759;
+    color: white;
+    position: fixed;
+    margin-left: 315px;
+    width: 100%;
+    height: 40px;
+    z-index: 1;
+    
+  }
+  #dropdown
+  {
+    background-color: #0A1B4F;
+  }
+  a:link, a:active,a:visited{
+    color:white;
+  }
+  li{
+      height: 50px;
+      
+  }
+  div.col-8 div {
+    height: 700px;
+    padding-top: 35px;
+  }
+  #preview
+  {
+      position: fixed;
+      bottom: 0px;
+      right: 0px;
+      margin-bottom: 20px;
+      margin-right: 20px;
+      border-radius: 5px;
+  }
+
+  p{
+      margin: 0;
+        margin-left:10px; 
+  }
+
+  hr{
+    background-color: black;
+    height:50%;
+  }
+
+  #print
+  {
+    position:fixed;
+    bottom: 0px;
+    right: 0px;
+    margin-bottom: 20px;
+    margin-right: 140px;
+    border-radius: 10px;
+  }
