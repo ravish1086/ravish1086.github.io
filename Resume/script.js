@@ -179,8 +179,53 @@ function editHighSchool()
     document.getElementById("aggregate10").readOnly=false;
     document.getElementById("passingyear10").readOnly=false;
 }
-
+var skillcount=0;
 function addInput()
 {
-    document.getElementById('skillset').innerHTML="<textarea type='text' id='skill'></textarea>"
+    skillcount=skillcount+1;
+    if(skillcount>10)
+    {
+        window.alert("Sorry This is the Limit, dont do too show off !!!\n Hadd Hoti Hai bhaee");
+        return;
+    }
+    console.log("into input");
+    document.getElementById('skillset').insertAdjacentHTML("beforeend","<textarea type='text' id='type"+skillcount+"' placeholder='Write the type of skill you wish....' rows=1></textarea>"+"<textarea type='text' rows=1 placeholder='Type Your Skills here...' id='skill"+skillcount+"'></textarea><br>");
+    //type_skillcount key store type_name_skillcount
+    //skill_skillcount key store value of skill_name_skillcount
+}
+
+function saveSkills()
+{
+    
+    for(let i=1;i<=10;i++)
+    {
+        if(document.getElementById('type'+i)===null||document.getElementById('type'+i).value==="")
+        {
+            console.log("thats it...!! End");
+            return;
+        }
+        window.localStorage.setItem("type"+i,document.getElementById('type'+i).value);
+        window.localStorage.setItem("skill"+i,document.getElementById('skill'+i).value);
+        document.getElementById('type'+i).readOnly=true;
+        document.getElementById('skill'+i).readOnly=true;
+    }
+}
+
+function fetchSkills()
+{
+    
+    for(let i=1;i<=10;i++)
+    {
+        skillcount=skillcount+1;
+        if(window.localStorage.getItem("skill"+i)===null||window.localStorage.getItem("skill"+i)==="")
+        {
+            console.log("thats it...!! End");
+            skillcount=skillcount-1;
+            return;
+        }
+        document.getElementById('skillset').insertAdjacentHTML("beforeend","<textarea type='text' id='type"+skillcount+"' placeholder='Write the type of skill you wish....' rows=1>"+window.localStorage.getItem("type"+i)+"</textarea>"+"<textarea type='text' rows=1 placeholder='Type Your Skills here...' id='skill"+skillcount+"'>"+window.localStorage.getItem("skill"+i)+"</textarea><br>");
+        
+        document.getElementById('type'+i).readOnly=false;
+        document.getElementById('skill'+i).readOnly=false;
+    }
 }

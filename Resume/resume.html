@@ -10,14 +10,14 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
         </head>
-    <body data-spy="scroll" data-target="#myScrollspy" data-offset="1">
+    <body data-spy="scroll" data-target="#myScrollspy" data-offset="1" onload="fetchSkills()">
       
         <div class="container-fluid">
             <div class="row">
               <nav class="col-sm-3 col-4" id="myScrollspy">
                 <ul class="nav nav-pills flex-column">
                   <li class="nav-item">
-                    <a class="nav-link active res" href="#section1">Basic Details</a>
+                    <a class="nav-link active" href="#section1">Basic Details</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#section2">Career Objective</a>
@@ -37,7 +37,7 @@
                     <a class="nav-link" href="#section5">Skills</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="#section6" >Experience and Projects</a>
+                    <a class="nav-link" href="#section6" style="text-align: justify;">Experience and Projects</a>
                   </li>
                 </ul>
               </nav>
@@ -109,11 +109,11 @@
                   <div id="section5" >         
                     <h1>Skills</h1>
                     <label for=""></label>
-                    <p id="skillset">
+                    <p id="skillset" >
                       
                     </p>
                     <button onclick="addInput()" class="btn btn-primary">Add Skill</button><br> <br>
-                    <button  class="btn btn-primary" value="Save" onclick="saveCapability()">Save</button> <button class="btn btn-primary" onclick="editCapability()"> Edit</button>
+                    <button  class="btn btn-primary" value="Save" onclick="saveSkills()">Save</button> <button class="btn btn-primary" onclick="editCapability()"> Edit</button>
                   </div>
                   <hr>
                   <div id="section6" >         
@@ -150,7 +150,7 @@
                   <hr style="width:100%; background-color: black;">
                   <h4 style="margin:0; padding-left:10px; padding-top: 0px;">Academic Qualifications</h4>
                   <h5 style="text-align: center; ">Graduation</h5>
-                  <hr width="120vw" style="margin-top: 0px;">
+                  <hr width="120px" style="margin-top: 0px;">
                   <p id="ingraduation"></p>
                 </div>
                 

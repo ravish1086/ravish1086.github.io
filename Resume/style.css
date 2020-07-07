@@ -2,7 +2,13 @@
 {
   padding:10px;
   width: 100%;
+  font-size: 1vw;
 }
+a:link,a:active,a:visited,a:hover
+{
+  color:white;
+}
+
 #myScrollspy
 {
   background-color: #243873;
@@ -32,12 +38,10 @@ body {
   {
     background-color: #0A1B4F;
   }
-  a:link, a:active,a:visited{
-    color:white;
-  }
+
   li{
       height: 50px;
-      
+      color:white;
   }
   div.col-8 div {
     height: 700px;
