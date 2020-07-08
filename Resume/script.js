@@ -223,7 +223,7 @@ function fetchSkills()
             skillcount=skillcount-1;
             return;
         }
-        document.getElementById('skillset').insertAdjacentHTML("beforeend","<textarea type='text' id='type"+skillcount+"' placeholder='Write the type of skill you wish....' rows=1>"+window.localStorage.getItem("type"+i)+"</textarea>"+"<textarea type='text' rows=1 placeholder='Type Your Skills here...' id='skill"+skillcount+"'>"+window.localStorage.getItem("skill"+i)+"</textarea><br>");
+        document.getElementById('skillset').insertAdjacentHTML("beforeend","<p class='con-align'><label class='labelst' for='textarea'>SkillType:&nbsp</label><textarea type='text' class='boxstyle' id='type"+skillcount+"' placeholder='Write the type of skill you wish....' rows=1>"+window.localStorage.getItem("type"+i)+"</textarea>"+"&nbsp &nbsp <label for='textarea'>SkillSet:&nbsp</label><textarea class='boxstyle' type='text' rows=1 placeholder='Type Your Skills here...' id='skill"+skillcount+"'>"+window.localStorage.getItem("skill"+i)+"</textarea></p><br>");
         
         document.getElementById('type'+i).readOnly=false;
         document.getElementById('skill'+i).readOnly=false;

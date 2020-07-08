@@ -76,3 +76,14 @@ body {
     margin-right: 140px;
     border-radius: 10px;
   }
+  .boxstyle
+  {
+    width:300px;
+    border-radius: 5px;
+    height: 34px;
+  }
+
+ .con-align *
+ {
+   vertical-align: middle;
+ }
