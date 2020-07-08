@@ -189,7 +189,7 @@ function addInput()
         return;
     }
     console.log("into input");
-    document.getElementById('skillset').insertAdjacentHTML("beforeend","<textarea type='text' id='type"+skillcount+"' placeholder='Write the type of skill you wish....' rows=1></textarea>"+"<textarea type='text' rows=1 placeholder='Type Your Skills here...' id='skill"+skillcount+"'></textarea><br>");
+    document.getElementById('skillset').insertAdjacentHTML("beforeend","<p class='con-align'><label class='labelst' for='textarea'>SkillType:&nbsp</label><textarea class='boxstyle' type='text' id='type"+skillcount+"' placeholder='Write the type of skill you wish....' rows=1></textarea>"+"&nbsp &nbsp <label for='textarea'>SkillSet:&nbsp</label><textarea class='boxstyle' type='text' rows=1 placeholder='Type Your Skills here...' id='skill"+skillcount+"'></textarea></p>");
     //type_skillcount key store type_name_skillcount
     //skill_skillcount key store value of skill_name_skillcount
 }
@@ -223,9 +223,90 @@ function fetchSkills()
             skillcount=skillcount-1;
             return;
         }
-        document.getElementById('skillset').insertAdjacentHTML("beforeend","<p class='con-align'><label class='labelst' for='textarea'>SkillType:&nbsp</label><textarea type='text' class='boxstyle' id='type"+skillcount+"' placeholder='Write the type of skill you wish....' rows=1>"+window.localStorage.getItem("type"+i)+"</textarea>"+"&nbsp &nbsp <label for='textarea'>SkillSet:&nbsp</label><textarea class='boxstyle' type='text' rows=1 placeholder='Type Your Skills here...' id='skill"+skillcount+"'>"+window.localStorage.getItem("skill"+i)+"</textarea></p><br>");
+        document.getElementById('skillset').insertAdjacentHTML("beforeend","<p class='con-align'><label class='labelst' for='textarea'>SkillType:&nbsp</label><textarea type='text' class='boxstyle' id='type"+skillcount+"' placeholder='Write the type of skill you wish....' rows=1>"+window.localStorage.getItem("type"+i)+"</textarea>"+"&nbsp &nbsp <label for='textarea'>SkillSet:&nbsp</label><textarea class='boxstyle' type='text' rows=1 placeholder='Type Your Skills here...' id='skill"+skillcount+"'>"+window.localStorage.getItem("skill"+i)+"</textarea></p>");
         
         document.getElementById('type'+i).readOnly=false;
         document.getElementById('skill'+i).readOnly=false;
+    }
+}
+
+function editSkills()
+{
+    for(let i=1;i<=10;i++)
+    {
+        if(window.localStorage.getItem("skill"+i)===null||window.localStorage.getItem("skill"+i)==="")
+        {
+            console.log("thats it...!! End");
+            return;
+        }
+        
+        document.getElementById('type'+i).readOnly=false;
+        document.getElementById('skill'+i).readOnly=false;
+    }
+}
+
+var expcount=0;
+function addExp()
+{
+    expcount=expcount+1;
+    if(expcount>10)
+    {
+        window.alert("Sorry This is the Limit, dont do too show off !!!\n Hadd Hoti Hai bhaee");
+        return;
+    }
+    console.log("into input exp");
+    document.getElementById('expset').insertAdjacentHTML("beforeend","<p class='con-align'><label class='labelst' for='textarea'>ExperienceType:&nbsp</label><textarea class='boxstyle' type='text' id='exptype"+expcount+"' placeholder='Write the type of Experience You Had....' rows=1></textarea>"+"&nbsp &nbsp <label for='textarea'>Experience Summary:&nbsp</label><textarea class='boxstyle' type='text' rows=5 placeholder='Describe about your Experience here...' id='exp"+expcount+"'></textarea></p>");
+    //type_skillcount key store type_name_skillcount
+    //skill_skillcount key store value of skill_name_skillcount
+}
+
+function saveExp()
+{
+    
+    for(let i=1;i<=10;i++)
+    {
+        if(document.getElementById('exptype'+i)===null||document.getElementById('exptype'+i).value==="")
+        {
+            console.log("thats it...!! End");
+            return;
+        }
+        window.localStorage.setItem("exptype"+i,document.getElementById('exptype'+i).value);
+        window.localStorage.setItem("exp"+i,document.getElementById('exp'+i).value);
+        document.getElementById('exptype'+i).readOnly=true;
+        document.getElementById('exp'+i).readOnly=true;
+    }
+}
+
+function fetchExp()
+{
+    
+    for(let i=1;i<=10;i++)
+    {
+        expcount=expcount+1;
+        if(window.localStorage.getItem("exp"+i)===null||window.localStorage.getItem("exp"+i)==="")
+        {
+            console.log("thats it...!! End");
+            expcount=expcount-1;
+            return;
+        }
+        document.getElementById('expset').insertAdjacentHTML("beforeend","<p class='con-align'><label class='labelst' for='textarea'>Experience Type:&nbsp</label><textarea type='text' class='boxstyle' id='exptype"+expcount+"' placeholder='Write the type of Experience You had....' rows=1>"+window.localStorage.getItem("exptype"+i)+"</textarea>    "+"<label for='textarea'>Experience Summary:&nbsp</label><textarea class='boxstyle' type='text' rows=1 placeholder='Type Your Skills here...' id='exp"+expcount+"'>"+window.localStorage.getItem("exp"+i)+"</textarea></p>");
+        
+        document.getElementById('exptype'+i).readOnly=false;
+        document.getElementById('exp'+i).readOnly=false;
+    }
+}
+
+function editExp()
+{
+    for(let i=1;i<=10;i++)
+    {
+        if(window.localStorage.getItem("exp"+i)===null||window.localStorage.getItem("exp"+i)==="")
+        {
+            console.log("thats it...!! End");
+            return;
+        }
+        
+        document.getElementById('exptype'+i).readOnly=false;
+        document.getElementById('exp'+i).readOnly=false;
     }
 }
