@@ -9,12 +9,22 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+    $('#toggle').click(function(){
+        $('#myScrollspy').slideToggle();
+    });    
+  });
+  </script>
         </head>
     <body data-spy="scroll" data-target="#myScrollspy" data-offset="1" onload="fetchSkills(); fetchExp(); ">
       
         <div class="container-fluid">
             <div class="row">
               <nav class="col-sm-3 col-4" id="myScrollspy">
+                
+                <br><br>
                 <ul class="nav nav-pills flex-column">
                   <li class="nav-item">
                     <a class="nav-link " href="#section1">Basic Details</a>
@@ -41,9 +51,9 @@
                   </li>
                 </ul>
               </nav>
-              <div class="header" ><p style="text-align: center; padding-top: 7px; text-decoration-thickness: 4px;">Create Your Resume, in few Mins!!!!</p>  </div>
+              <div class="header" ><p style="text-align: center; padding-top: 7px; text-decoration-thickness: 4px;">Create Your Resume, in few Mins!!!!<button style="float: right;" id="toggle"  ><span class="navbar-toggler-icon"></span></button></p>  </div>
               <br><br>
-              <div class="col-sm-9 col-8">
+              <div class="col-sm-9 col-8" >
                 <div id="section1" >    
                   <h1>Basic Details</h1>
                   <form >

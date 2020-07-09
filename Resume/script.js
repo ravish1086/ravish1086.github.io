@@ -1,3 +1,5 @@
+
+
 function saveBasicDetails()
 {
     window.localStorage.setItem("name",document.getElementById("name").value);
