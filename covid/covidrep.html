@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Res_GRID</title>
+	 <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<style type="text/css">
+.box
+{
+	height:300px;
+	
+	border:1px solid black;
+}
+</style>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  transition: background-color .5s;
+}
+
+.sidenav {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+
+.sidenav a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+}
+
+#main {
+  transition: margin-left .5s;
+  padding: 16px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+label{
+	text-align: center;
+}
+</style>
+</head>
+
+
+   	<script type="text/javascript">
+   		function openNav() {
+  document.getElementById("mySidenav").style.width = "180px";
+  document.getElementById("main").style.marginLeft = "180px";
+  document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("main").style.marginLeft= "0";
+  document.body.style.backgroundColor = "white";
+}
+		var j=-1;
+   		var d;
+		function getData(){
+			
+		    $.getJSON('https://covid-api.com/api/reports?date=2020-07-18&q=India&iso=IND&region_name=India', function(data) {
+		d=data;
+    
+       	console.log(data.data[0].region);
+       	for(let i=0;i<36;i++)
+       {
+       document.getElementsByTagName('h3')[i].innerText=d.data[i].region.province;
+
+       	document.getElementsByTagName('ins')[++j].innerText=d.data[i].confirmed;
+		document.getElementsByTagName('ins')[++j].innerText=d.data[i].active;
+		document.getElementsByTagName('ins')[++j].innerText=d.data[i].recovered;
+		document.getElementsByTagName('ins')[++j].innerText=d.data[i].deaths;
+		document.getElementsByTagName('ins')[++j].innerText=d.data[i].recovered_diff;
+		document.getElementsByTagName('ins')[++j].innerText=d.data[i].active_diff;       		
+		document.getElementsByTagName('ins')[++j].innerText=d.data[i].deaths_diff;
+      	
+       }
+
+     
+    });
+		}
+		</script>
+
+<body onload="getData()">
+<div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">About</a>
+  <a href="#">Services</a>
+  <a href="#">Clients</a>
+  <a href="#">Contact</a>
+</div>
+
+<div id="main">
+  <h2>Sidenav Push Example</h2>
+  <p>Click on the element below to open the side navigation menu, and push this content to the right. Notice that we add a black see-through background-color to body when the sidenav is opened.</p>
+  <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; open</span>
+</div>
+
+<div class="container-fluid">
+<div class="row">
+	<div class="col-sm-3 box" style="text-align: center;">
+		<h3>State:</h3>
+		<label>Total Cases:</label><ins></ins><br>
+		<label>Active Cases:</label><ins></ins><br>
+		<label>Recovered Cases:</label><ins></ins><br>
+		<label>Total Deaths:</label><ins></ins><br>
+		<label>Day Recovered:</label><ins></ins><br>
+		<label>Day Confirmed:</label><ins></ins><br>
+		<label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+
+</div>
+<div class="col-sm-3 box" style="text-align: center;">
+		<h3>State:</h3>
+		<label>Total Cases:</label><ins></ins><br>
+		<label>Active Cases:</label><ins></ins><br>
+		<label>Recovered Cases:</label><ins></ins><br>
+		<label>Total Deaths:</label><ins></ins><br>
+		<label>Day Recovered:</label><ins></ins><br>
+		<label>Day Confirmed:</label><ins></ins><br>
+		<label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+</div>
+
+	<div class="col-sm-3 box" style="text-align: center;">
+		<h3>State:</h3>
+		<label>Total Cases:</label><ins></ins><br>
+		<label>Active Cases:</label><ins></ins><br>
+		<label>Recovered Cases:</label><ins></ins><br>
+		<label>Total Deaths:</label><ins></ins><br>
+		<label>Day Recovered:</label><ins></ins><br>
+		<label>Day Confirmed:</label><ins></ins><br>
+		<label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+
+</div>
+
+	<div class="col-sm-3 box" style="text-align: center;">
+		<h3>State:</h3>
+		<label>Total Cases:</label><ins></ins><br>
+		<label>Active Cases:</label><ins></ins><br>
+		<label>Recovered Cases:</label><ins></ins><br>
+		<label>Total Deaths:</label><ins></ins><br>
+		<label>Day Recovered:</label><ins></ins><br>
+		<label>Day Confirmed:</label><ins></ins><br>
+		<label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+
+</div>
+
+	<div class="col-sm-3 box" style="text-align: center;">
+		<h3>State:</h3>
+		<label>Total Cases:</label><ins></ins><br>
+		<label>Active Cases:</label><ins></ins><br>
+		<label>Recovered Cases:</label><ins></ins><br>
+		<label>Total Deaths:</label><ins></ins><br>
+		<label>Day Recovered:</label><ins></ins><br>
+		<label>Day Confirmed:</label><ins></ins><br>
+		<label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+
+</div>
+
+	<div class="col-sm-3 box" style="text-align: center;">
+		<h3>State:</h3>
+		<label>Total Cases:</label><ins></ins><br>
+		<label>Active Cases:</label><ins></ins><br>
+		<label>Recovered Cases:</label><ins></ins><br>
+		<label>Total Deaths:</label><ins></ins><br>
+		<label>Day Recovered:</label><ins></ins><br>
+		<label>Day Confirmed:</label><ins></ins><br>
+		<label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+
+</div>
+
+	<div class="col-sm-3 box" style="text-align: center;">
+		<h3>State:</h3>
+		<label>Total Cases:</label><ins></ins><br>
+		<label>Active Cases:</label><ins></ins><br>
+		<label>Recovered Cases:</label><ins></ins><br>
+		<label>Total Deaths:</label><ins></ins><br>
+		<label>Day Recovered:</label><ins></ins><br>
+		<label>Day Confirmed:</label><ins></ins><br>
+		<label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+
+</div>
+
+	<div class="col-sm-3 box" style="text-align: center;">
+		<h3>State:</h3>
+		<label>Total Cases:</label><ins></ins><br>
+		<label>Active Cases:</label><ins></ins><br>
+		<label>Recovered Cases:</label><ins></ins><br>
+		<label>Total Deaths:</label><ins></ins><br>
+		<label>Day Recovered:</label><ins></ins><br>
+		<label>Day Confirmed:</label><ins></ins><br>
+		<label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+
+</div>
+
+	<div class="col-sm-3 box" style="text-align: center;">
+		<h3>State:</h3>
+		<label>Total Cases:</label><ins></ins><br>
+		<label>Active Cases:</label><ins></ins><br>
+		<label>Recovered Cases:</label><ins></ins><br>
+		<label>Total Deaths:</label><ins></ins><br>
+		<label>Day Recovered:</label><ins></ins><br>
+		<label>Day Confirmed:</label><ins></ins><br>
+		<label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+
+</div>
+
+
+</div>
+
+
+</body>
+</html>
