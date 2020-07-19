@@ -7,6 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
 .box
 {
@@ -93,7 +95,8 @@ function closeNav() {
        	console.log(data.data[0].region);
        	for(let i=0;i<36;i++)
        {
-       document.getElementsByTagName('h3')[i].innerText=d.data[i].region.province;
+      	
+      	 document.getElementsByTagName('h3')[i].innerText=d.data[i].region.province;
 
        	document.getElementsByTagName('ins')[++j].innerText=d.data[i].confirmed;
 		document.getElementsByTagName('ins')[++j].innerText=d.data[i].active;
@@ -107,7 +110,27 @@ function closeNav() {
 
      
     });
+
 		}
+
+	function getdetails(){
+		    $.getJSON('https://covid-api.com/api/reports?date=2020-07-18&q=India&iso=IND&region_name=India', function(data) {
+			
+			let i=document.getElementById('state').value;
+    	
+
+
+        document.getElementsByTagName('p')[1].innerHTML="<b>"+d.data[i].region.province+"</b>"+"<br><em>Total Cases :</em>"+d.data[i].confirmed+"<br><em>Active Cases :</em>"+d.data[i].active+"<br><em>Recovered Cases :</em>"+d.data[i].recovered+"<br><em>Total Deaths :</em>"+d.data[i].deaths+"<br><em>Past Day Recovery :</em>"+d.data[i].recovered_diff+"<br><em>Past Day Confirmed :</em>"+d.data[i].active_diff+"<br><em>Past Day Deaths :</em>"+d.data[i].deaths_diff;
+
+       
+   
+
+
+
+     
+    });
+		}
+
 		</script>
 
 <body onload="getData()">
@@ -263,6 +286,77 @@ function closeNav() {
 
 </div>
 
+ <div class="modal fade" id="myModal">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+      
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Modal Heading</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        
+        <!-- Modal body -->
+        <div class="modal-body">
+         			<select id="state" name="state" onchange="getdetails()" style="width: 100%;">
+				<option value="0">Andaman and Nicobar Islands</option>
+<option value="1">Andhra Pradesh</option>
+<option value="2">Arunachal Pradesh</option>
+<option value="3">Assam</option>
+<option value="4">Bihar</option>
+<option value="5">Chandigarh</option>
+<option value="6">Chhattisgarh</option>
+<option value="7">Dadar and Nagar Haveli and Daman and Diu</option>
+<option value="8">Delhi</option>
+<option value="9">Goa</option>
+<option value="10">Gujarat</option>
+<option value="11">Haryana</option>
+<option value="12">Himachal Pradesh</option>
+<option value="13">Jammu and Kashmir</option>
+<option value="14">Jharkhand</option>
+<option value="15">Karnataka</option>
+<option value="16">Kerala</option>
+<option value="17">Ladakh</option>
+<option value="18">Lakshadweep</option>
+<option value="19">Madhya Pradesh</option>
+<option value="20">Maharashtra</option>
+<option value="21">Manipur</option>
+<option value="22">Meghalaya</option>
+<option value="23">Mizoram</option>
+<option value="24">Nagaland</option>
+<option value="25">Odisha</option>
+<option value="26">Puducherry</option>
+<option value="27">Punjab</option>
+<option value="28">Rajasthan</option>
+<option value="29">Sikkim </option>
+<option value="30">Tamil Nadu</option>
+<option value="31">Telangana</option>
+<option value="32">Tripura</option>
+<option value="33">Uttar Pradesh</option>
+<option value="34">Uttarakhand</option>
+<option value="35">West Bengal</option>
+			</select>
+       
+<br><br>
+<p>
+	Here Will Be the Data
+	</p>
 
+        </div>
+
+
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  
+</div>
+
+<button data-toggle="modal" data-target="#myModal" style="margin-bottom: 5px; margin-right:5px; bottom:0px; right: 0px; position:fixed; z-index: 2; " value="Search"><i class="fa fa-search"></i></button>
 </body>
 </html>
