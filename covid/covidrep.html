@@ -154,7 +154,7 @@ function myFunction() {
 	function getdetails(){
 		    $.getJSON('https://covid-api.com/api/reports?date=2020-07-19&q=India&iso=IND&region_name=India', function(data) {
 			let i=document.getElementById('state').value;
-        document.getElementsByTagName('p')[1].innerHTML="<b>"+d.data[i].region.province+"</b>"+"<br><em>Total Cases :</em>"+d.data[i].confirmed+"<br><em>Active Cases :</em>"+d.data[i].active+"<br><em>Recovered Cases :</em>"+d.data[i].recovered+"<br><em>Total Deaths :</em>"+d.data[i].deaths+"<br><em>Past Day Recovery :</em>"+d.data[i].recovered_diff+"<br><em>Past Day Confirmed :</em>"+d.data[i].confirmed_diff+"<br><em>Past Day Deaths :</em>"+d.data[i].deaths_diff;
+        document.getElementsByTagName('p')[0].innerHTML="<b>"+d.data[i].region.province+"</b>"+"<br><em>Total Cases :</em>"+d.data[i].confirmed+"<br><em>Active Cases :</em>"+d.data[i].active+"<br><em>Recovered Cases :</em>"+d.data[i].recovered+"<br><em>Total Deaths :</em>"+d.data[i].deaths+"<br><em>Past Day Recovery :</em>"+d.data[i].recovered_diff+"<br><em>Past Day Confirmed :</em>"+d.data[i].confirmed_diff+"<br><em>Past Day Deaths :</em>"+d.data[i].deaths_diff;
     });
 		}
 
@@ -189,6 +189,7 @@ function myFunction() {
 </div>
 
 <div class="container-fluid">
+
 <div class="row">
 	<div class="col-sm-3 box" style="text-align: center;" >
 		<h3>State:</h3>
@@ -206,6 +207,7 @@ function myFunction() {
 	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
 	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
 </div>
+
 <div class="row">
 <div class="col-sm-3 box" style="text-align: center;">
 		<h3>State:</h3>
