@@ -17,7 +17,7 @@
 {
 	height:330px;
 	
-	border:1px solid black;
+	border:1px solid #A569BD;
 	
 background-color: #330055;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 1000'%3E%3Cg %3E%3Ccircle fill='%23330055' cx='50' cy='0' r='50'/%3E%3Cg fill='%233a015d' %3E%3Ccircle cx='0' cy='50' r='50'/%3E%3Ccircle cx='100' cy='50' r='50'/%3E%3C/g%3E%3Ccircle fill='%23410165' cx='50' cy='100' r='50'/%3E%3Cg fill='%2348026e' %3E%3Ccircle cx='0' cy='150' r='50'/%3E%3Ccircle cx='100' cy='150' r='50'/%3E%3C/g%3E%3Ccircle fill='%23500376' cx='50' cy='200' r='50'/%3E%3Cg fill='%2357047e' %3E%3Ccircle cx='0' cy='250' r='50'/%3E%3Ccircle cx='100' cy='250' r='50'/%3E%3C/g%3E%3Ccircle fill='%235f0587' cx='50' cy='300' r='50'/%3E%3Cg fill='%2367068f' %3E%3Ccircle cx='0' cy='350' r='50'/%3E%3Ccircle cx='100' cy='350' r='50'/%3E%3C/g%3E%3Ccircle fill='%236f0798' cx='50' cy='400' r='50'/%3E%3Cg fill='%237707a0' %3E%3Ccircle cx='0' cy='450' r='50'/%3E%3Ccircle cx='100' cy='450' r='50'/%3E%3C/g%3E%3Ccircle fill='%238008a9' cx='50' cy='500' r='50'/%3E%3Cg fill='%238909b1' %3E%3Ccircle cx='0' cy='550' r='50'/%3E%3Ccircle cx='100' cy='550' r='50'/%3E%3C/g%3E%3Ccircle fill='%239109ba' cx='50' cy='600' r='50'/%3E%3Cg fill='%239a09c3' %3E%3Ccircle cx='0' cy='650' r='50'/%3E%3Ccircle cx='100' cy='650' r='50'/%3E%3C/g%3E%3Ccircle fill='%23a309cb' cx='50' cy='700' r='50'/%3E%3Cg fill='%23ad09d4' %3E%3Ccircle cx='0' cy='750' r='50'/%3E%3Ccircle cx='100' cy='750' r='50'/%3E%3C/g%3E%3Ccircle fill='%23b608dc' cx='50' cy='800' r='50'/%3E%3Cg fill='%23c007e5' %3E%3Ccircle cx='0' cy='850' r='50'/%3E%3Ccircle cx='100' cy='850' r='50'/%3E%3C/g%3E%3Ccircle fill='%23c905ee' cx='50' cy='900' r='50'/%3E%3Cg fill='%23d303f6' %3E%3Ccircle cx='0' cy='950' r='50'/%3E%3Ccircle cx='100' cy='950' r='50'/%3E%3C/g%3E%3Ccircle fill='%23D0F' cx='50' cy='1000' r='50'/%3E%3C/g%3E%3C/svg%3E");
@@ -102,7 +102,7 @@ label{
 {
 background-color: #000000;
 background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 800 800'%3E%3Cg %3E%3Ccircle fill='%23000000' cx='400' cy='100' r='400'/%3E%3Ccircle fill='%23180d1c' cx='400' cy='100' r='250'/%3E%3Ccircle fill='%23261431' cx='400' cy='100' r='200'/%3E%3Ccircle fill='%23351947' cx='400' cy='100' r='150'/%3E%3Ccircle fill='%23451e5e' cx='400' cy='100' r='100'/%3E%3Ccircle fill='%23552277' cx='400' cy='100' r='50'/%3E%3C/g%3E%3C/svg%3E");
-background-attachment: relative;
+background-attachment: fixed;
 background-size: cover;
 height:300px;	
 text-align: center;
@@ -114,6 +114,10 @@ align-content: center;
 {
 	color:center;
 
+}
+ins
+{
+	color: #EAF2F8;
 }
 </style>
 
@@ -156,7 +160,7 @@ function myFunction() {
 	function getdetails(){
 		    $.getJSON('https://covid-api.com/api/reports?date=2020-07-19&q=India&iso=IND&region_name=India', function(data) {
 			let i=document.getElementById('state').value;
-        document.getElementsByTagName('p')[0].innerHTML="<b>"+d.data[i].region.province+"</b>"+"<br><em>Total Cases :</em>"+d.data[i].confirmed+"<br><em>Active Cases :</em>"+d.data[i].active+"<br><em>Recovered Cases :</em>"+d.data[i].recovered+"<br><em>Total Deaths :</em>"+d.data[i].deaths+"<br><em>Past Day Recovery :</em>"+d.data[i].recovered_diff+"<br><em>Past Day Confirmed :</em>"+d.data[i].confirmed_diff+"<br><em>Past Day Deaths :</em>"+d.data[i].deaths_diff;
+        document.getElementsByTagName('p')[0].innerHTML="<b>"+d.data[i].region.province+"</b>"+"<br><em>Total Cases:  </em>&nbsp &nbsp"+d.data[i].confirmed+"<br><em>Active Cases :</em>"+d.data[i].active+"<br><em>Recovered Cases :</em>"+d.data[i].recovered+"<br><em>Total Deaths :</em>"+d.data[i].deaths+"<br><em>Past Day Recovery :</em>"+d.data[i].recovered_diff+"<br><em>Past Day Confirmed :</em>"+d.data[i].confirmed_diff+"<br><em>Past Day Deaths :</em>"+d.data[i].deaths_diff;
     });
 		}
 
@@ -166,6 +170,7 @@ function myFunction() {
 			$(document).ready(function(){
   	$('#corona').css("float","center");
   	$('.box').append("<br><img src='https://img.icons8.com/nolan/64/coronavirus.png' id='corona'/>");
+
   });
 
 			
@@ -194,144 +199,167 @@ function myFunction() {
 <div class="container-fluid">
 
 <div class="row">
-	<div class="col-sm-3 box" style="text-align: center;" >
+	<div class="col-sm-3 box card bg-primary" style="text-align: center;" >
 		<h3>State:</h3>
-		<label>Total Cases:</label><ins></ins><br>
-		<label>Active Cases:</label><ins></ins><br>
-		<label>Recovered Cases:</label><ins></ins><br>
-		<label>Total Deaths:</label><ins></ins><br>
-		<label>Day Recovered:</label><ins></ins><br>
-		<label>Day Confirmed:</label><ins></ins><br>
-		<label>Day Deaths:</label><ins></ins>
-		<br>
-		<img src="https://img.icons8.com/nolan/64/coronavirus.png"/ id="corona"> 
+		<label>Total Cases: </label>&nbsp&nbsp<ins></ins><br>
+		<label>Active Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Deaths:</label>&nbsp&nbsp<ins></ins>
+	 
 	</div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 </div>
 
 <div class="row">
-<div class="col-sm-3 box" style="text-align: center;">
+	<div class="col-sm-3 box card bg-primary" style="text-align: center;" >
 		<h3>State:</h3>
-		<label>Total Cases:</label><ins></ins><br>
-		<label>Active Cases:</label><ins></ins><br>
-		<label>Recovered Cases:</label><ins></ins><br>
-		<label>Total Deaths:</label><ins></ins><br>
-		<label>Day Recovered:</label><ins></ins><br>
-		<label>Day Confirmed:</label><ins></ins><br>
-		<label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+		<label>Total Cases: </label>&nbsp&nbsp<ins></ins><br>
+		<label>Active Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Deaths:</label>&nbsp&nbsp<ins></ins>
+	 
+	</div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 </div>
 <div class="row">
-<div class="col-sm-3 box" style="text-align: center;">
+	<div class="col-sm-3 box card bg-primary" style="text-align: center;" >
 		<h3>State:</h3>
-		<label>Total Cases:</label><ins></ins><br>
-		<label>Active Cases:</label><ins></ins><br>
-		<label>Recovered Cases:</label><ins></ins><br>
-		<label>Total Deaths:</label><ins></ins><br>
-		<label>Day Recovered:</label><ins></ins><br>
-		<label>Day Confirmed:</label><ins></ins><br>
-		<label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+		<label>Total Cases: </label>&nbsp&nbsp<ins></ins><br>
+		<label>Active Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Deaths:</label>&nbsp&nbsp<ins></ins>
+	 
+	</div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 
-</div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 
-<div class="row">
-	<div class="col-sm-3 box" style="text-align: center;">
-		<h3>State:</h3>
-		<label>Total Cases:</label><ins></ins><br>
-		<label>Active Cases:</label><ins></ins><br>
-		<label>Recovered Cases:</label><ins></ins><br>
-		<label>Total Deaths:</label><ins></ins><br>
-		<label>Day Recovered:</label><ins></ins><br>
-		<label>Day Confirmed:</label><ins></ins><br>
-		<label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 </div>
 <div class="row">
-	<div class="col-sm-3 box" style="text-align: center;">
+	<div class="col-sm-3 box card bg-primary" style="text-align: center;" >
 		<h3>State:</h3>
-		<label>Total Cases:</label><ins></ins><br>
-		<label>Active Cases:</label><ins></ins><br>
-		<label>Recovered Cases:</label><ins></ins><br>
-		<label>Total Deaths:</label><ins></ins><br>
-		<label>Day Recovered:</label><ins></ins><br>
-		<label>Day Confirmed:</label><ins></ins><br>
-		<label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+		<label>Total Cases: </label>&nbsp&nbsp<ins></ins><br>
+		<label>Active Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Deaths:</label>&nbsp&nbsp<ins></ins>
+	 
+	</div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 
-</div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 
-<div class="row">
-	<div class="col-sm-3 box" style="text-align: center;">
-		<h3>State:</h3>
-		<label>Total Cases:</label><ins></ins><br>
-		<label>Active Cases:</label><ins></ins><br>
-		<label>Recovered Cases:</label><ins></ins><br>
-		<label>Total Deaths:</label><ins></ins><br>
-		<label>Day Recovered:</label><ins></ins><br>
-		<label>Day Confirmed:</label><ins></ins><br>
-		<label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 </div>
 <div class="row">
-	<div class="col-sm-3 box" style="text-align: center;">
+	<div class="col-sm-3 box card bg-primary" style="text-align: center;" >
 		<h3>State:</h3>
-		<label>Total Cases:</label><ins></ins><br>
-		<label>Active Cases:</label><ins></ins><br>
-		<label>Recovered Cases:</label><ins></ins><br>
-		<label>Total Deaths:</label><ins></ins><br>
-		<label>Day Recovered:</label><ins></ins><br>
-		<label>Day Confirmed:</label><ins></ins><br>
-		<label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+		<label>Total Cases: </label>&nbsp&nbsp<ins></ins><br>
+		<label>Active Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Deaths:</label>&nbsp&nbsp<ins></ins>
+	 
+	</div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 </div>
 <div class="row">
-	<div class="col-sm-3 box" style="text-align: center;">
+	<div class="col-sm-3 box card bg-primary" style="text-align: center;" >
 		<h3>State:</h3>
-		<label>Total Cases:</label><ins></ins><br>
-		<label>Active Cases:</label><ins></ins><br>
-		<label>Recovered Cases:</label><ins></ins><br>
-		<label>Total Deaths:</label><ins></ins><br>
-		<label>Day Recovered:</label><ins></ins><br>
-		<label>Day Confirmed:</label><ins></ins><br>
-		<label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+		<label>Total Cases: </label>&nbsp&nbsp<ins></ins><br>
+		<label>Active Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Deaths:</label>&nbsp&nbsp<ins></ins>
+	 
+	</div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 </div>
 <div class="row">
-	<div class="col-sm-3 box" style="text-align: center;">
+	<div class="col-sm-3 box card bg-primary" style="text-align: center;" >
 		<h3>State:</h3>
-		<label>Total Cases:</label><ins></ins><br>
-		<label>Active Cases:</label><ins></ins><br>
-		<label>Recovered Cases:</label><ins></ins><br>
-		<label>Total Deaths:</label><ins></ins><br>
-		<label>Day Recovered:</label><ins></ins><br>
-		<label>Day Confirmed:</label><ins></ins><br>
-		<label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
-	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label><ins></ins><br><label>Active Cases:</label><ins></ins><br><label>Recovered Cases:</label><ins></ins><br><label>Total Deaths:</label><ins></ins><br><label>Day Recovered:</label><ins></ins><br><label>Day Confirmed:</label><ins></ins><br><label>Day Deaths:</label><ins></ins></div>
+		<label>Total Cases: </label>&nbsp&nbsp<ins></ins><br>
+		<label>Active Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Deaths:</label>&nbsp&nbsp<ins></ins>
+	 
+	</div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+</div>
+<div class="row">
+	<div class="col-sm-3 box card bg-primary" style="text-align: center;" >
+		<h3>State:</h3>
+		<label>Total Cases: </label>&nbsp&nbsp<ins></ins><br>
+		<label>Active Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Deaths:</label>&nbsp&nbsp<ins></ins>
+	 
+	</div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+</div>
+<div class="row">
+	<div class="col-sm-3 box card bg-primary" style="text-align: center;" >
+		<h3>State:</h3>
+		<label>Total Cases: </label>&nbsp&nbsp<ins></ins><br>
+		<label>Active Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br>
+		<label>Day Deaths:</label>&nbsp&nbsp<ins></ins>
+	 
+	</div>
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
+
+	<div class="col-sm-3 box" style="text-align: center;"><h3>State:</h3><label>Total Cases:</label>&nbsp&nbsp<ins></ins><br><label>Active Cases:</label>&nbsp&nbsp<ins></ins><br><label>Recovered Cases:</label>&nbsp&nbsp<ins></ins><br><label>Total Deaths:</label>&nbsp&nbsp<ins></ins><br><label>Day Recovered:</label>&nbsp&nbsp<ins></ins><br><label>Day Confirmed:</label>&nbsp&nbsp<ins></ins><br><label>Day Deaths:</label>&nbsp&nbsp<ins></ins></div>
 </div>
 
 
@@ -408,7 +436,7 @@ function myFunction() {
   
 </div>
 
-<button data-toggle="modal" data-target="#myModal" style="margin-bottom: 15px; margin-right:15px; bottom:0px; right: 0px; position:fixed; z-index: 2; " value="Search"><i class="fa fa-search"></i></button>
+<a data-toggle="modal" data-target="#myModal" style="margin-bottom: 15px; margin-right:15px; bottom:0px; right: 0px; position:fixed; z-index: 2; " value="Search"><img src="icons8-protection-mask-64 (1).png"/></a>
 <a href="https://icons8.com/icon/tAEDeWqtsqBR/protection-mask">Protection Mask icon by Icons8</a>
 </body>
 </html>
