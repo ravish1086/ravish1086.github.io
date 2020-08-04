@@ -1,0 +1,281 @@
+#toggle-image
+{
+    transition: ease-in-out 5s;
+}
+@media screen and (min-width: 400px)   {
+    .card-hide
+    {
+        display:none;
+        transition: ease-out 0.5s;
+    }
+    .table-hide
+    {
+        display: flexbox;
+        transition: ease-in 0.5s;
+    }
+    label.task-date
+{
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 0px;
+}
+.floating
+{
+    float: right;
+}
+.out
+{
+    padding: 4px;
+    background-color: rgba(0,0,0,.05);
+    margin: 2px;
+    
+}
+label{
+    font-size: 22px;
+    font-weight: 500;
+}
+.label{
+    margin-bottom: 5px;
+    margin-top: 10px;
+}
+.date
+{
+   line-height: 0.5em;
+   margin-top: 20px;
+   position: relative;
+   float: right;
+   margin-right: 0px;
+   
+}
+.brand
+{
+    color: white; 
+    display:inline-block; 
+    margin-top: 22px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: absolute; 
+    font-weight: 500; 
+    font-size: 22px;
+    height:50px;
+   padding-left: 20px;;
+    
+}
+.nav-links
+{
+    margin-top: 12px;
+    position: relative;
+    margin-left: 100px;
+    display: inline-block;
+    height: 40px;
+    width: 300px;
+}
+
+button
+{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+    .res-but
+    {
+        border: 1px solid white;;
+        width:20px;
+        margin: 2.5px;
+            
+    }
+    .res-butt
+    {
+        
+    
+    position:relative;
+    
+    transition: ease-in-out 0.5s;
+    }
+
+    li{
+        list-style: none;
+        display: inline-block;
+        color:white;
+        padding-top:10px;
+        padding-left:10px;
+    
+    }
+    .mylink
+    {
+        color:white;
+    }
+    .mynav
+    {
+        background-color: #063585;
+        height:50px;
+        line-height: 0em;
+    }
+    .nav-button{
+        float:right; 
+        margin-top:14px; 
+        margin-right:6px;
+        display:none;
+    }
+    .res-li{
+        display:inline-flex;
+    }
+
+ }
+    @media screen and (max-width: 600px)
+    {
+        ul{
+            padding-inline-start: 0px;
+        }
+        .card-hide
+        {
+            display:block;
+            transition: ease-in 0.5s;
+        }
+        .table-hide
+    {
+        display:none;
+        transition: ease-out 0.5s;
+    }
+        label.task-date
+        {
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin: 0px;
+        }
+        .floating
+        {
+            float: right;
+        }
+        .out
+        {
+            padding: 4px;
+            background-color: rgba(0,0,0,.05);
+            margin: 2px;
+            
+        }
+        label{
+            font-size: 22px;
+            font-weight: 500;
+        }
+        .label{
+            margin-bottom: 5px;
+            margin-top: 10px;
+        }
+        .date
+        {
+           line-height: 0.5em;
+           margin-top: 20px;
+           position: relative;
+           float: right;
+           margin-right: 0px;
+           
+        }
+        .brand
+        {
+               color: white;
+    display: inline-block;
+    margin-top: 0;
+    padding-bottom: 0px;
+    position: absolute;
+    font-weight: 500;
+    font-size: 22px;
+    height: 50px;
+    padding-left: 20px;
+    padding-top: 5px;
+            
+        }
+        .nav-links
+        {
+            margin-top: 12px;
+            position: relative;
+            margin-left: 0;
+            display: inline-block;
+            height: 40px;
+            width: 100%;
+        }
+        
+        button
+        {
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        .nav-button
+        {
+            float: right;
+            margin-top: 14px;
+            margin-right: 6px;
+        }
+        li{
+            list-style: none;
+            width: 100%;
+            color: white;
+            margin-top: 10px;
+            padding-left: 0;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        li:hover{
+            background-color: #063585;
+        }
+        .mynav
+        {
+            height:150px;
+            transition: height 0.2s;
+        }
+        .res-butt{
+            padding-left: 0px;
+            padding-top: 0;
+            /* height: auto; */
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: -10px;
+            text-align: center;
+    
+        }
+
+        .res-but
+    {
+        border: 1px solid white;;
+        width:20px;
+        margin: 2.5px;
+            
+    }
+ 
+    li:hover
+    {
+        background-color: #071281;
+    }
+    .mylink
+    {
+        color:white;
+    }
+    .mynav
+    {
+        background-color: #063585;
+        
+    }
+    .nav-button{
+        float:right; 
+        margin-top:14px; 
+        margin-right:6px;
+       
+    }
+    .res-li{
+        display:none;
+    }
+    }
+
+    .res-lii{
+        display:none;
+    }
+    .res-nav{
+        transition: height 0.54s ;
+        height:50px;
+    }
+    .home{
+        display:inline-block;
+        
+    }
+  

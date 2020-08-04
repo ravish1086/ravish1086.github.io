@@ -1,6 +1,6 @@
 <html>
     <head>
-        <Title>Tasker Application</Title>
+        <Title>Tasker</Title>
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="HandheldFriendly" content="true">
@@ -8,42 +8,81 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <script src="Jquery.js"></script>
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" href="title-icon.png" type="image/icon type">
     </head>
-    <body onload="GetDetails();" style="background-color: blanchedalmond;">
-    <div>
+    <body onload="GetDetails();" style="background-color: #e0d9ff">
+      <nav class="mynav">
+        <div class="brand"> Tasker</div>
+        <div class="nav-button">
+          <div class="res-but"></div>
+          <div class="res-but"></div>
+          <div class="res-but"></div>
+      </div>   
+        <div class="nav-links">
+            <ul class="res-butt" > 
+                <li class=""> <a class="mylink" href="#">Home</a></li>
+                <li class=""> <a class="mylink" href="#">Menu</a></li>
+                <li class=""> <a class="mylink" href="#">About</a></li>
+            </ul>
+        </div>
+         
+      </nav>
 
-        <div style="align-items: center;">
-        <h2>Tasker - Just For YOU  (Under Development) </h2>
+        <div  class="container-fluid">
+        <h2>Tasker - Just For YOU (Beta) </h2>
+        <div class="date" >
+          <p >Today's Date</p>
+          <p id="tareekh"></p>
+        </div>
+        </div>
+        <br><br><br>
+        <div class="container-fluid"> 
+          <span><a href="#"><img src="add.png" height="22px" width="22px" data-target="#dialog" data-toggle="modal"></a></span>&nbsp<label>  New Task</label>
         </div>
         
-        <div> 
-               <h3 id="User"></h3>
-        </div>
-            <div>
-            <div >
-                <p style="text-decoration: solid;">Aaj Ki Tareekh: </Text><br><Text id="tareekh"></Text>
-            </div>
-            <br>
-        <div><p>Enter the Task Name:</p> 
-         <input type="p" name="taskname" id="taskname" class="form-control"> 
-         <Text>Enter Task Description :</p>
-         <input type="text" name="description" id="description" class="form-control">
-         <Text>Target Date :</Text>
-         <input type="date" name="date" id="date" class="form-control">
-        </div>
-        <button onclick="AddTask();">Add Task</button>
-        <div class="table-responsive">
-        <table border="1px solid" id="tablee" class="table table-striped">
-            <tr><th>TaskName</th><th>Description</th><th>Target Date</th><th>Created On</th></tr>
+        <div class="modal fade " id="dialog">
+          <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h4 class="modal-title">Enter Task Details</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+              </div>
+              <div class="modal-body">
+                <p class="label">Enter the Task Name:</p> 
+                <input type="text" name="taskname" id="taskname" class="form-control"> 
+                <p class="label">Enter Task Description :</p>
+                <input type="text" name="description" id="description" class="form-control">
+                <p class="label">Target Date :</p>
+                <input type="date" name="date" id="date" class="form-control">
+                
+                <br><hr width="100%">
+                <button class="btn btn-primary " onclick="AddTask();">Add Task</button>
+              </div>
+        
           
+         </div>
+         </div>
+        </div>
+        
+        <div class="table-responsive container-fluid table-hide">
+        <table  id="tablee" class="table table-striped">
+            <tr><th>TaskName</th><th>Description</th><th>Target Date</th><th>Created On</th></tr>
+            
         </table>
+        
         </div>
+      
+        <div class="container-fluid " >
+          <div class="card-hide" id="division">
+
+          </div>
+          <button onclick="ClearStorage();" class="btn btn-primary">Clear Storage</button>
         </div>
-        <button onclick="ClearStorage();">
-clear storage
-            </button>
-        </button>
-        </div>
+        <a href="#" style="position: fixed; margin-bottom: 5px; margin-right: 10; bottom:0; right: 0;" id="style-toggle"><img src="toggle1.png" id="toggle-image"></a>
+        Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+       </body>
         <script>
             function ClearStorage()
             {   
@@ -111,6 +150,18 @@ clear storage
                 document.getElementById('targetdate'+a).innerHTML=targetdate;
                 document.getElementById('createdon'+a).innerHTML=createdon;
 
+                      //
+                var row2='<div><div class="task-name out"><label>Title:</label><label id="dtaskname'+a+'"></label></div><div class="target-date out"><label class="task-date">Target Date:</label><label class="task-date floating" id="dtargetdate'+a+'"></label></div></div><div class="task-description out" style="text-align:right;"><textarea id="ddescription'+a+'" style="width: 100%; margin: 5px; height:18%; background-color: rgba(0,0,0,.05); text-align:right; padding-right:10px; border: none;" readonly>Description</textarea></div><div class="task-cdate out"><label class="task-date">Created On:</label><label class="task-date floating" id="dcreatedon'+a+'"></label></div><br>';      
+                
+                document.getElementById('division').innerHTML+=row2;
+          
+               
+                document.getElementById('dtaskname'+a).innerHTML=taskname;
+                document.getElementById('ddescription'+a).innerHTML=description;
+                document.getElementById('dtargetdate'+a).innerHTML=targetdate;
+                document.getElementById('dcreatedon'+a).innerHTML=createdon;
+                      //
+
                 b=a+1;
                 console.log('value of b is ='+b);
                 }
@@ -153,5 +204,5 @@ function checkCookie() {
   }
 }
         </script>
-        </body>
+       
         </html>
