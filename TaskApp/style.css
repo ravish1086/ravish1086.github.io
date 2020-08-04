@@ -1,8 +1,15 @@
+a:hover{
+    color: white;
+}
 #toggle-image
 {
     transition: ease-in-out 5s;
 }
-@media screen and (min-width: 400px)   {
+.nav-bg
+{
+    background-color: #071281;
+}
+@media screen and (min-width: 599px)   {
     .card-hide
     {
         display:none;
@@ -47,35 +54,10 @@ label{
    margin-right: 0px;
    
 }
-.brand
-{
-    color: white; 
-    display:inline-block; 
-    margin-top: 22px;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    position: absolute; 
-    font-weight: 500; 
-    font-size: 22px;
-    height:50px;
-   padding-left: 20px;;
-    
-}
-.nav-links
-{
-    margin-top: 12px;
-    position: relative;
-    margin-left: 100px;
-    display: inline-block;
-    height: 40px;
-    width: 300px;
-}
 
-button
-{
-    margin-top: 15px;
-    margin-bottom: 10px;
-}
+
+
+
     .res-but
     {
         border: 1px solid white;;
@@ -83,23 +65,7 @@ button
         margin: 2.5px;
             
     }
-    .res-butt
-    {
-        
-    
-    position:relative;
-    
-    transition: ease-in-out 0.5s;
-    }
 
-    li{
-        list-style: none;
-        display: inline-block;
-        color:white;
-        padding-top:10px;
-        padding-left:10px;
-    
-    }
     .mylink
     {
         color:white;
@@ -123,9 +89,7 @@ button
  }
     @media screen and (max-width: 600px)
     {
-        ul{
-            padding-inline-start: 0px;
-        }
+       
         .card-hide
         {
             display:block;
@@ -170,51 +134,10 @@ button
            margin-right: 0px;
            
         }
-        .brand
-        {
-               color: white;
-    display: inline-block;
-    margin-top: 0;
-    padding-bottom: 0px;
-    position: absolute;
-    font-weight: 500;
-    font-size: 22px;
-    height: 50px;
-    padding-left: 20px;
-    padding-top: 5px;
-            
-        }
-        .nav-links
-        {
-            margin-top: 12px;
-            position: relative;
-            margin-left: 0;
-            display: inline-block;
-            height: 40px;
-            width: 100%;
-        }
-        
-        button
-        {
-            margin-top: 15px;
-            margin-bottom: 10px;
-        }
-        .nav-button
-        {
-            float: right;
-            margin-top: 14px;
-            margin-right: 6px;
-        }
-        li{
-            list-style: none;
-            width: 100%;
-            color: white;
-            margin-top: 10px;
-            padding-left: 0;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+
+ 
+      
+      
         li:hover{
             background-color: #063585;
         }
@@ -260,7 +183,6 @@ button
         float:right; 
         margin-top:14px; 
         margin-right:6px;
-       
     }
     .res-li{
         display:none;
