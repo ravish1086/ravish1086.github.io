@@ -4,6 +4,7 @@
         <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <meta name="HandheldFriendly" content="true">
+        <link rel="manifest" href="manifest.json" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -13,84 +14,87 @@
         <link rel="icon" href="title-icon.png" type="image/icon type">
     </head>
     <body onload="GetDetails();" style="background-color: #e0d9ff">
-      <nav class="navbar navbar-expand-md nav-bg navbar-dark">
-        <!-- Brand -->
-        <a class="navbar-brand" href="#">Tasker</a>
-      
-        <!-- Toggler/collapsibe Button -->
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <!-- Navbar links -->
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
-          <ul class="navbar-nav">
-            <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact Us</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-
-        <div  class="container-fluid">
-        <h2>Tasker - Just For YOU (Beta) </h2>
-        <div class="date" >
-          <p >Today's Date</p>
-          <p id="tareekh"></p>
-        </div>
-        </div>
-        <br><br><br>
-        <div class="container-fluid"> 
-          <span><a href="#"><img src="add.png" height="22px" width="22px" data-target="#dialog" data-toggle="modal"></a></span>&nbsp<label>  New Task</label>
-        </div>
+      <main>
+        <nav class="navbar navbar-expand-md nav-bg navbar-dark">
+          <!-- Brand -->
+          <a class="navbar-brand" href="#">Tasker</a>
         
-        <div class="modal fade " id="dialog">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title">Enter Task Details</h4>
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-              </div>
-              <div class="modal-body">
-                <p class="label">Enter the Task Name:</p> 
-                <input type="text" name="taskname" id="taskname" class="form-control"> 
-                <p class="label">Enter Task Description :</p>
-                <input type="text" name="description" id="description" class="form-control">
-                <p class="label">Target Date :</p>
-                <input type="date" name="date" id="date" class="form-control">
-                
-                <br><hr width="100%">
-                <button class="btn btn-primary " onclick="AddTask();">Add Task</button>
-              </div>
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
         
-          
-         </div>
-         </div>
-        </div>
-        
-        <div class="table-responsive container-fluid table-hide">
-        <table  id="tablee" class="table table-striped">
-            <tr><th>TaskName</th><th>Description</th><th>Target Date</th><th>Created On</th></tr>
-            
-        </table>
-        
-        </div>
-      
-        <div class="container-fluid " >
-          <div class="card-hide" id="division">
-
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Contact Us</a>
+              </li>
+            </ul>
           </div>
-          <button onclick="ClearStorage();" class="btn btn-primary">Clear Storage</button>
-        </div>
-        <a href="#" style="position: fixed; margin-bottom: 5px; margin-right: 10; bottom:0; right: 0;" id="style-toggle"><img src="toggle1.png" id="toggle-image"></a>
-        Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
-       </body>
+        </nav>
+  
+          <div  class="container-fluid">
+          <h2>Tasker - Just For YOU (Beta) </h2>
+          <div class="date" >
+            <p >Today's Date</p>
+            <p id="tareekh"></p>
+          </div>
+          </div>
+          <br><br><br>
+          <div class="container-fluid"> 
+            <span><a href="#"><img src="add.png" height="22px" width="22px" data-target="#dialog" data-toggle="modal"></a></span>&nbsp<label>  New Task</label>
+          </div>
+          
+          <div class="modal fade " id="dialog">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title">Enter Task Details</h4>
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body">
+                  <p class="label">Enter the Task Name:</p> 
+                  <input type="text" name="taskname" id="taskname" class="form-control"> 
+                  <p class="label">Enter Task Description :</p>
+                  <input type="text" name="description" id="description" class="form-control">
+                  <p class="label">Target Date :</p>
+                  <input type="date" name="date" id="date" class="form-control">
+                  
+                  <br><hr width="100%">
+                  <button class="btn btn-primary " onclick="AddTask();">Add Task</button>
+                </div>
+          
+            
+           </div>
+           </div>
+          </div>
+          
+          <div class="table-responsive container-fluid table-hide">
+          <table  id="tablee" class="table table-striped">
+              <tr><th>TaskName</th><th>Description</th><th>Target Date</th><th>Created On</th></tr>
+              
+          </table>
+          
+          </div>
+        
+          <div class="container-fluid " >
+            <div class="card-hide" id="division">
+  
+            </div>
+            <button onclick="ClearStorage();" class="btn btn-primary">Clear Storage</button>
+          </div>
+          <a href="#" style="position: fixed; margin-bottom: 5px; margin-right: 10; bottom:0; right: 0;" id="style-toggle"><img src="toggle1.png" id="toggle-image"></a>
+          Icons made by <a href="https://www.flaticon.com/authors/srip" title="srip">srip</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
+         
+      </main>
+      </body>
         <script>
             function ClearStorage()
             {   
