@@ -1,3 +1,26 @@
+.task-description
+{
+    border: cornsilk;
+    border-radius: 15px;
+    border-right: solid;
+    border-left: solid;
+}
+.toggle-desc,.task-cdate
+{
+    background: linear-gradient(235deg,hsl(244deg 70% 65%) , transparent);
+    border-radius: 10px;
+    border-block-end-style: initial;
+    border-collapse: collapse;
+    border-left: inset;
+    border-style: outset;
+    font-style: italic;
+    font-weight: bold;
+    font-variant: petite-caps;
+}
+.difftarget
+{
+    font-size: small;
+}
 a:hover{
     color: white;
 }

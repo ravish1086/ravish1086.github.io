@@ -116,7 +116,8 @@
                 console.log("In Add Task");
                 var taskname=document.getElementById('taskname').value;
                 var description=document.getElementById('description').value;
-                var targetdate=document.getElementById('date').value;
+                var targetdate=new Date(document.getElementById('date').value).toDateString();
+                
                 var createdon=date.toDateString();
                 console.log(taskname);
                 var keytaskname='taskname'+length;
@@ -163,7 +164,7 @@
                 document.getElementById('createdon'+a).innerHTML=createdon;
 
                       //
-                var row2='<div><div class="task-name out"><label>Title:</label><label id="dtaskname'+a+'"></label></div><div class="target-date out"><label class="task-date">Target Date:</label><label class="task-date floating" id="dtargetdate'+a+'"></label></div></div><div class="task-description out" style="text-align:right;"><textarea id="ddescription'+a+'" style="width: 100%; margin: 5px; height:18%; background-color: rgba(0,0,0,.05); text-align:right; padding-right:10px; border: none;" readonly>Description</textarea></div><div class="task-cdate out"><label class="task-date">Created On:</label><label class="task-date floating" id="dcreatedon'+a+'"></label></div><br>';      
+                var row2='<div id="toggle-desc" class="toggle-desc"><div class="task-name out"><label></label><label id="dtaskname'+a+'"></label><label id="difftarget'+a+'" style="float:right;" class="difftarget"></label></div><div class="target-date out"><label class="task-date">Target Date:</label><em><label class="task-date floating" id="dtargetdate'+a+'"></label></em></div></div><div class="task-description out" style="text-align:right;"><p id="ddescription'+a+'" style="width: 100%; margin: 5px; height:18%; background-color: rgba(0,0,0,.05); text-align:right; padding-right:10px; border: none;" readonly>Description</p></div><div class="task-cdate out"><label class="task-date">Created On:</label><label class="task-date floating" id="dcreatedon'+a+'"></label></div><br>';      
                 
                 document.getElementById('division').innerHTML+=row2;
           
@@ -172,6 +173,10 @@
                 document.getElementById('ddescription'+a).innerHTML=description;
                 document.getElementById('dtargetdate'+a).innerHTML=targetdate;
                 document.getElementById('dcreatedon'+a).innerHTML=createdon;
+
+
+
+                //document.getElementById('difftarget'+a).innerHTML=createdon;
                       //
 
                 b=a+1;

@@ -1,6 +1,8 @@
 
 $(document).ready(function(){
-        
+    console.log("Not this");
+        $('.task-description').hide();
+
     $('.nav-button').click(function(){
         console.log("hello");
         $('li').toggleClass('res-li');
@@ -8,6 +10,7 @@ $(document).ready(function(){
         
     });
 
+   
     if($(window).width() > 600)
     {
         console.log("hitt");
@@ -45,4 +48,14 @@ $(document).ready(function(){
             document.getElementsByClassName('card-hide')[0].style.display="block";
         }
     });
+
+    $('.toggle-desc').click(function(){
+            console.log("slider clicked");
+            
+        $(this).next().slideToggle(500);
+
+    });
+    
+    
+
 });
